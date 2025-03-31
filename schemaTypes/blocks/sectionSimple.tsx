@@ -1,32 +1,24 @@
 import {defineField, defineType} from 'sanity'
 import {CustomPreview} from '../sanityComponents'
-import {componentStyles} from '../groups'
 
-const hero = defineType({
-  name: 'hero',
+const sectionSimple = defineType({
+  name: 'sectionSimple',
+  title: 'Section',
   type: 'object',
-  groups: [
-    {name: 'content', title: 'Content', default: true},
-    {name: 'style', title: 'Style'},
-  ],
   fields: [
     defineField({
       name: 'textGroup',
       type: 'textGroup',
-      group: 'content',
     }),
     defineField({
       name: 'image',
       type: 'image',
-      group: 'content',
     }),
     defineField({
-      name: 'imageOnLeft',
-      title: 'Image on Left?',
+      name: 'imageAsBackground',
+      title: 'Image as Background Image?',
       type: 'boolean',
-      group: 'content',
     }),
-    ...componentStyles,
   ],
   components: {preview: CustomPreview},
   preview: {
@@ -45,4 +37,4 @@ const hero = defineType({
   },
 })
 
-export default hero
+export default sectionSimple

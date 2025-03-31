@@ -1,17 +1,8 @@
 import accordion from './accordion'
-import accordionItem from './accordionItem'
-import contactForm from './contactForm'
-import content from './content'
+import cardGrid from './cardGrid'
 import hero from './hero'
-import portfolioSwiper from './portfolioSwiper'
-import sectionTitle from './sectionTitle'
+import heroSwiper from './heroSwiper'
+import multiColumnContent from './multiColumnContent'
+import section from './section'
 
-export const componentTypes = [
-  accordion,
-  accordionItem,
-  contactForm,
-  content,
-  hero,
-  portfolioSwiper,
-  sectionTitle,
-]
+export const componentTypes = [accordion, cardGrid, hero, heroSwiper, multiColumnContent, section]

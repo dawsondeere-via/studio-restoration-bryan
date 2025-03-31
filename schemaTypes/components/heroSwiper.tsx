@@ -2,8 +2,8 @@ import {defineField, defineType} from 'sanity'
 import {CustomPreview} from '../sanityComponents'
 import {componentStyles} from '../groups'
 
-const hero = defineType({
-  name: 'hero',
+const heroSwiper = defineType({
+  name: 'heroSwiper',
   type: 'object',
   groups: [
     {name: 'content', title: 'Content', default: true},
@@ -16,13 +16,14 @@ const hero = defineType({
       group: 'content',
     }),
     defineField({
-      name: 'image',
-      type: 'image',
+      name: 'images',
+      type: 'array',
       group: 'content',
+      of: [{type: 'image'}],
     }),
     defineField({
-      name: 'imageOnLeft',
-      title: 'Image on Left?',
+      name: 'imagesOnLeft',
+      title: 'Images on Left?',
       type: 'boolean',
       group: 'content',
     }),
@@ -32,17 +33,17 @@ const hero = defineType({
   preview: {
     select: {
       textGroup: 'textGroup',
-      image: 'image',
+      images: 'images',
     },
     prepare(selection) {
-      const {textGroup, image} = selection
+      const {textGroup, images} = selection
       return {
         title: textGroup.headline,
         subtitle: textGroup.subheadline,
-        media: image,
+        media: images?.length > 0 ? images[0] : undefined,
       }
     },
   },
 })
 
-export default hero
+export default heroSwiper

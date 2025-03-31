@@ -1,15 +1,23 @@
 import {defineField, defineType} from 'sanity'
 import {CustomPreview} from '../sanityComponents'
+import {componentStyles} from '../groups'
 
-const accordion = defineType({
-  name: 'accordion',
+const multiColumnContent = defineType({
+  name: 'multiColumnContent',
+  title: 'Multi-Column Content',
   type: 'object',
+  groups: [
+    {name: 'content', title: 'Content', default: true},
+    {name: 'style', title: 'Style'},
+  ],
   fields: [
     defineField({
       name: 'items',
       type: 'array',
-      of: [{type: 'accordionItem'}],
+      group: 'content',
+      of: [{type: 'sectionSimple'}],
     }),
+    ...componentStyles,
   ],
   components: {preview: CustomPreview},
   preview: {
@@ -19,11 +27,11 @@ const accordion = defineType({
     prepare(selection) {
       const {items} = selection
       return {
-        title: 'Accordion',
+        title: 'Multi-Column Content',
         subtitle: `${items ? items.length : 0} items`,
       }
     },
   },
 })
 
-export default accordion
+export default multiColumnContent

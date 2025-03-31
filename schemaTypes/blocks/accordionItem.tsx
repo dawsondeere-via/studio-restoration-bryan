@@ -2,7 +2,6 @@ import {defineField, defineType} from 'sanity'
 
 const accordionItem = defineType({
   name: 'accordionItem',
-  title: 'Accordion Item',
   type: 'object',
   fields: [
     defineField({

@@ -1,4 +1,4 @@
-import {defineConfig} from 'sanity'
+import {defineConfig, isDev} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {presentationTool} from 'sanity/presentation'
 import {visionTool} from '@sanity/vision'
@@ -10,9 +10,9 @@ import {homePageLocations, mainDocuments, menuItemLocations, portfolioProjectLoc
 
 export default defineConfig({
   name: 'default',
-  title: 'Whitetailed Websites', // !!
+  title: 'Restoration Bryan', // !!
 
-  projectId: 'udjcsqhb', // !!
+  projectId: '2ynddnto', // !!
   dataset: 'production',
 
   plugins: [
@@ -38,7 +38,7 @@ export default defineConfig({
     }),
     media(),
     unsplashImageAsset(),
-    visionTool({name: 'queries', title: 'Queries'}),
+    ...(isDev ? [visionTool({name: 'queries', title: 'Queries'})] : []),
   ],
 
   schema: {
@@ -46,6 +46,6 @@ export default defineConfig({
   },
 
   scheduledPublishing: {
-    enabled: false,
+    enabled: !isDev,
   },
 })

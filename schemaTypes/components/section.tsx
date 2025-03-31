@@ -2,8 +2,8 @@ import {defineField, defineType} from 'sanity'
 import {CustomPreview} from '../sanityComponents'
 import {componentStyles} from '../groups'
 
-const hero = defineType({
-  name: 'hero',
+const section = defineType({
+  name: 'section',
   type: 'object',
   groups: [
     {name: 'content', title: 'Content', default: true},
@@ -21,8 +21,8 @@ const hero = defineType({
       group: 'content',
     }),
     defineField({
-      name: 'imageOnLeft',
-      title: 'Image on Left?',
+      name: 'imageAsBackground',
+      title: 'Image as Background Image?',
       type: 'boolean',
       group: 'content',
     }),
@@ -45,4 +45,4 @@ const hero = defineType({
   },
 })
 
-export default hero
+export default section

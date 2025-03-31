@@ -2,7 +2,6 @@ import {defineField, defineType} from 'sanity'
 
 const homePage = defineType({
   name: 'homePage',
-  title: 'Home Page',
   type: 'document',
   fields: [
     defineField({
@@ -20,14 +19,28 @@ const homePage = defineType({
       type: 'array',
       of: [
         {type: 'accordion'},
-        {type: 'contactForm'},
-        {type: 'content'},
+        {type: 'cardGrid'},
         {type: 'hero'},
-        {type: 'portfolioSwiper'},
-        {type: 'sectionTitle'},
+        {type: 'heroSwiper'},
+        {type: 'multiColumnContent'},
+        {type: 'section'},
       ],
     }),
   ],
+  preview: {
+    select: {
+      label: 'label',
+      slug: 'slug',
+    },
+    prepare(selection) {
+      const {label, slug} = selection
+      const route = slug.current === 'home' ? '/' : `/${slug.current}`
+      return {
+        title: label,
+        subtitle: `Route: ${route}`,
+      }
+    },
+  },
 })
 
 export default homePage
