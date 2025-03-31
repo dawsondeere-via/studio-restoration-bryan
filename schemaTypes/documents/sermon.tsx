@@ -27,7 +27,11 @@ const sermon = defineType({
     defineField({
       name: 'scripture',
       type: 'scripture',
-      // validation: (rule) => [rule.required()],
+    }),
+    defineField({
+      name: 'topics',
+      type: 'array',
+      of: [{type: 'reference', to: [{type: 'topic'}]}],
     }),
     defineField({
       name: 'sermonSeries',
