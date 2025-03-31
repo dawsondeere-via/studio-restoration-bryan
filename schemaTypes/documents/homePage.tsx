@@ -20,6 +20,7 @@ const homePage = defineType({
       of: [
         {type: 'accordion'},
         {type: 'cardGrid'},
+        {type: 'divider'},
         {type: 'hero'},
         {type: 'heroSwiper'},
         {type: 'multiColumnContent'},
