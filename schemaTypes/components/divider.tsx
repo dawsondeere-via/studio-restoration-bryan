@@ -1,13 +1,6 @@
 import {defineField, defineType} from 'sanity'
 import {CustomPreview} from '../sanityComponents'
-
-const colorOptions = [
-  {title: 'White', value: 'common.white'},
-  {title: 'Black', value: 'secondary.black'},
-  {title: 'Red', value: 'secondary.main'},
-  {title: 'Gold', value: 'secondary.gold'},
-  {title: 'Gray', value: 'secondary.gray'},
-]
+import {colorOptions} from '../constants'
 
 const widthOptions = [
   {title: 'Full width', value: 'full'},

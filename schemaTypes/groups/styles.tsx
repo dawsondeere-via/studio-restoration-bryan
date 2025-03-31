@@ -1,15 +1,10 @@
 import {defineField} from 'sanity'
+import {colorOptions} from '../constants'
 
 const fontOptions = [
   {title: 'Arno Pro', value: 'ArnoPro'},
   {title: 'Adobe Garamond Pro', value: 'AdobeGaramondPro'},
   {title: 'Sarah Script', value: 'SarahScript'},
-]
-
-const fontColorOptions = [
-  {title: 'Black', value: 'common.black'},
-  {title: 'White', value: 'common.white'},
-  {title: 'Red', value: 'secondary.main'},
 ]
 
 const variantOptions = [
@@ -29,7 +24,7 @@ const styles = [
     type: 'string',
     group: 'style',
     options: {
-      list: fontColorOptions,
+      list: colorOptions,
     },
   }),
   defineField({

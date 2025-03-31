@@ -1,4 +1,5 @@
 import {defineField} from 'sanity'
+import {colorOptions} from '../constants'
 
 const spacingOptions = [
   {title: 'Normal', value: 'normal'},
@@ -7,21 +8,13 @@ const spacingOptions = [
   {title: 'No spacing', value: 'no-spacing'},
 ]
 
-const backgroundColorOptions = [
-  {title: 'White', value: 'common.white'},
-  {title: 'Black', value: 'secondary.black'},
-  {title: 'Red', value: 'secondary.main'},
-  {title: 'Gold', value: 'secondary.gold'},
-  {title: 'Gray', value: 'secondary.gray'},
-]
-
 const componentStyles = [
   defineField({
     name: 'backgroundColor',
     type: 'string',
     group: 'style',
     options: {
-      list: backgroundColorOptions,
+      list: colorOptions,
     },
   }),
   defineField({

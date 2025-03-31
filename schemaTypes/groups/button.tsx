@@ -1,4 +1,5 @@
 import {defineField} from 'sanity'
+import {colorOptions} from '../constants'
 
 const iconOptions = [{title: 'None', value: 'none'}]
 const variantOptions = [
@@ -17,6 +18,14 @@ const button = [
     description: 'For internal links, be sure to start with a forward slash (ex. /sermons)',
     type: 'string',
     group: 'button',
+  }),
+  defineField({
+    name: 'buttonColor',
+    type: 'string',
+    group: 'button',
+    options: {
+      list: colorOptions,
+    },
   }),
   defineField({
     name: 'buttonIcon',
