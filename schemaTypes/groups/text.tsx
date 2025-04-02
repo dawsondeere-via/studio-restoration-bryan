@@ -17,12 +17,6 @@ const text = [
     group: 'text',
     of: [{type: 'block', styles: []}],
   }),
-  defineField({
-    name: 'textBlock',
-    type: 'array',
-    group: 'text',
-    of: [{type: 'block', styles: []}],
-  }),
 ]
 
 export default text
